@@ -28,6 +28,8 @@ app.get('/', (req, res) => {
   res.send(Buffer.from(base64String, 'base64'));
 });
 
-if (import.meta.env.PROD) app.listen(3000);
+const PORT = import.meta.env.PORT || 3000;
+
+if (import.meta.env.PROD) app.listen(PORT);
 
 export const viteNodeApp = app;
