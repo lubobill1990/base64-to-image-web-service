@@ -1,0 +1,14 @@
+[Unit]
+Description=Docker Compose for base64-to-image.musicapps.cn
+Requires=docker.service
+After=docker.service
+
+[Service]
+WorkingDirectory=/home/lubo/base64-to-image
+ExecStart=/usr/bin/docker compose -p base64-to-image -f ./docker-compose.yml up app nginx
+ExecStop=/usr/bin/docker compose -p base64-to-image down -f ./docker-compose.yml
+TimeoutStartSec=0
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target

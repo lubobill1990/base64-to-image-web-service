@@ -25,6 +25,12 @@ app.get('/', (req, res) => {
   // send the base64 string as actual image which can be displayed in the browser directly without html tag
   // need to send the image header
   res.setHeader('Content-Type', `image/${imageType}`);
+  // write the header so that browser can save the image to a file with the imageType extension
+  res.setHeader(
+    'Content-Disposition',
+    `attachment; filename="image.${imageType}"`
+  );
+
   res.send(Buffer.from(base64String, 'base64'));
 });
 
