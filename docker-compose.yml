@@ -1,0 +1,18 @@
+services:
+  app:
+    build:
+      context: .
+    image: base64-to-image-app
+    ports:
+      - '43011:3000'
+    restart: always
+    environment:
+      - NODE_ENV=production
+    networks:
+      - base64-to-image-network
+    deploy:
+      replicas: 5
+
+networks:
+  base64-to-image-network:
+    driver: bridge

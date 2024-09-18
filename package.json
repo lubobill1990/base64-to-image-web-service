@@ -1,0 +1,15 @@
+{
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "vite": "^4.5.5",
+    "vite-plugin-node": "^3.1.0"
+  },
+  "dependencies": {
+    "express": "^4.21.0"
+  }
+}
