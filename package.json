@@ -2,7 +2,9 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build"
+    "build": "vite build",
+    "docker:build:app": "docker compose -p base64-to-image -f ./docker-compose.yml build app",
+    "buildAndDeploy": "git fetch origin && git reset --hard origin/master && npm run docker:build:app && sudo systemctl restart base64-to-image"
   },
   "devDependencies": {
     "@types/express": "^4.17.21",
